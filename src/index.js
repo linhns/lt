@@ -33,12 +33,13 @@ onValue(referenceInDB, function(snapshot) {
         const snapshotValues = snapshot.val()
         const leads = Object.values(snapshotValues)
         render(leads)
+    } else {
+        render([])
     }
 })
 
 deleteBtn.addEventListener("dblclick", function() {
     remove(referenceInDB)
-    ulEl.innerHTML = ""
 })
 
 inputBtn.addEventListener("click", function() {
